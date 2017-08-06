@@ -33,7 +33,7 @@ namespace AzureStorageManagement
             return true;
         }
 
-        public bool ListAll(string containerName, string identifiableName)
+        public bool ListAll(string containerName)
         {
 
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString")); //Coming from the web.config
@@ -53,12 +53,7 @@ namespace AzureStorageManagement
                     {
                         blobName = blob.Name;
                     }
-                    
-                    if (blobName == identifiableName)
-                    {
-                        Console.Out.WriteLine("FILE " + blobName + " HAS BEEN FOUND!!!");
-                        Console.WriteLine("Block blob of length {0}: {1} \nName: {2}\n", blob.Properties.Length, blob.Uri, blobName);
-                    }
+                    Console.WriteLine("Block blob of length {0}: {1} \nName: {2}\n", blob.Properties.Length, blob.Uri, blobName);
                 }
             }
             Console.Out.WriteLine("Processed at: " + DateTime.Now);

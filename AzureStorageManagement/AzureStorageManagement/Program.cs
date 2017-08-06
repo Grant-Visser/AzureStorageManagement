@@ -29,7 +29,7 @@ namespace AzureStorageManagement
         {
             Debug.Assert(input.CanRead);
             AzureStorage storage = new AzureStorage();
-            storage.ListAll("footage-upload","footage14.mp4");
+            storage.ListAll("footage-upload");
         }
 
         [Singleton]
