@@ -12,6 +12,8 @@ namespace AzureStorageManagement
 {
     public class Program
     {
+        //Requires Microsoft.Azure.WebJobs.Extensions nuget package to be installed.
+        //And Microsoft.WindowsAzure.ConfigurationManager
         public static void Main(string[] args)
         {
             string acs = CloudConfigurationManager.GetSetting("StorageConnectionString");
